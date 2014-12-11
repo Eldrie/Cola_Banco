@@ -29,5 +29,56 @@ public class Cola_Banco
                         return true;
                     else return false;
                 }
+                
+                public boolean encolar(String dato)
+                {
+                  if(!estaLlena())  
+                  {
+                      COLA[++ultimo]=dato;
+                      if (ultimo==0)
+                          frente=0;
+                          return true;
+                  }
+                  return false;          
+                }
+                
+                public boolean encolar2(String dato)
+                {
+                if(!estaLlena())  
+                  {
+                      COLA2[++ultimo]=dato;
+                      if (ultimo==0)
+                          frente=0;
+                          return true;
+                  }
+                  return false;
+                }
+                                
+                public String desencolar()      
+                {
+                String dato="";
+                    if (!estaVacia())
+                    {
+                        dato = COLA[frente];                        
+                        COLA[frente]="";
+                        if (frente==ultimo)
+                            frente = ultimo = -1;
+                        else frente++;
+                    }                    
+                return dato;
+                }        
+                public String desencolar2()
+                {
+                    String dato="";
+                    if (!estaVacia())
+                    {
+                        dato = COLA2[frente];                        
+                        COLA2[frente]="";
+                        if (frente==ultimo)
+                            frente = ultimo = -1;
+                        else frente++;
+                    }                    
+                return dato;
+                }
     
 }
